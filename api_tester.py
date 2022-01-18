@@ -2,10 +2,10 @@ import fire
 import requests
 
 # NOTE: Adjust these settings as needed
-API_HOST = "http://localhost:8000"
-RESOURCE_URI = "things"
-USERNAME = "admin"
-PASSWORD = "admin"
+API_HOST = "http://127.0.0.1:8000"
+RESOURCE_URI = "cookie_stands"
+USERNAME = "chloe"
+PASSWORD = "asdf"
 
 
 class ApiTester:
@@ -75,13 +75,13 @@ class ApiTester:
 
         return response.json()
 
-    # TODO adjust parameter names to match API
-    def create(self, name, description=None, owner=None):
+    # TODO adjust parameter locations to match API
+    def create(self, location, description=None, owner=None):
         """creates a resource in api
 
         Usage:
         python api_tester.py create /
-            --name=required --description=optional --owner=optional
+            --location=required --description=optional --owner=optional
 
         Returns: JSON
         """
@@ -95,7 +95,7 @@ class ApiTester:
         }
 
         data = {
-            "name": name,
+            "location": location,
             "description": description,
             "owner": owner,
         }
@@ -104,12 +104,12 @@ class ApiTester:
 
         return response.json()
 
-    def update(self, id, name=None, description=None, owner=None):
+    def update(self, id, location=None, description=None, owner=None):
         """updates a resource in api
 
         Usage:
         python api_tester.py update 1 /
-            --name=optional --description=optional --owner=optional
+            --location=optional --description=optional --owner=optional
 
         Returns: JSON
         """
@@ -125,7 +125,7 @@ class ApiTester:
         original = self.get_one(id)
 
         data = {
-            "name": name or original["name"],
+            "location": location or original["location"],
             "description": description or original["description"],
             "owner": owner or original["owner"],
         }

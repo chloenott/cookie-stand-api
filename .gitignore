@@ -1,5 +1,7 @@
 Source: https://github.com/github/gitignore/blob/master/Python.gitignore
 
+.venv
+
 # User generated
 ENV/
 .vscode
