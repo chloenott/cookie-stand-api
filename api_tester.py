@@ -2,7 +2,7 @@ import fire
 import requests
 
 # NOTE: Adjust these settings as needed
-API_HOST = "http://127.0.0.1:8000"
+API_HOST = "https://mighty-sea-58798.herokuapp.com"
 RESOURCE_URI = "cookie_stands"
 USERNAME = "chloe"
 PASSWORD = "asdf"
